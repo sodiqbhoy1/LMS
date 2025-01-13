@@ -1,0 +1,103 @@
+<div class="container mx-auto p-6">
+    <!-- Tab Navigation -->
+    <div class="flex space-x-6 mb-6">
+      <button
+        (click)="selectTab('list')"
+        [ngClass]="{'text-blue-600 border-b-2 border-blue-600': selectedTab === 'list'}"
+        class="text-sm font-medium py-2 px-4"
+      >
+        User List
+      </button>
+      <button
+        (click)="selectTab('add')"
+        [ngClass]="{'text-blue-600 border-b-2 border-blue-600': selectedTab === 'add'}"
+        class="text-sm font-medium py-2 px-4"
+      >
+        Add User
+      </button>
+      <button
+        (click)="selectTab('edit')"
+        [ngClass]="{'text-blue-600 border-b-2 border-blue-600': selectedTab === 'edit'}"
+        class="text-sm font-medium py-2 px-4"
+      >
+        Edit User
+      </button>
+    </div>
+  
+    <!-- User List Tab -->
+    <div *ngIf="selectedTab === 'list'">
+      <h1 class="text-3xl font-bold mb-4">User List</h1>
+      <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+        <table class="min-w-full table-auto">
+          <thead>
+            <tr>
+              <th class="px-4 py-2 border-b">ID</th>
+              <th class="px-4 py-2 border-b">Name</th>
+              <th class="px-4 py-2 border-b">Email</th>
+              <th class="px-4 py-2 border-b">Status</th>
+              <th class="px-4 py-2 border-b">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td class="px-4 py-2 border-b">{{ user.id }}</td>
+              <td class="px-4 py-2 border-b">{{ user.name }}</td>
+              <td class="px-4 py-2 border-b">{{ user.email }}</td>
+              <td class="px-4 py-2 border-b">{{ user.status }}</td>
+              <td class="px-4 py-2 border-b">
+                <button (click)="deleteUser(user.id)" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+                <button (click)="setEditForm(user)" class="bg-blue-500 text-white px-4 py-2 rounded ml-2">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Add User Tab -->
+    <div *ngIf="selectedTab === 'add'">
+      <h1 class="text-3xl font-bold mb-4">Add User</h1>
+      <form (ngSubmit)="addUser()" class="bg-white p-4 rounded-lg shadow-md">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium">Name</label>
+          <input id="name" [(ngModel)]="userForm.name" name="name" type="text" class="mt-1 p-2 w-full border rounded" required />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input id="email" [(ngModel)]="userForm.email" name="email" type="email" class="mt-1 p-2 w-full border rounded" required />
+        </div>
+        <div class="mb-4">
+          <label for="status" class="block text-sm font-medium">Status</label>
+          <select id="status" [(ngModel)]="userForm.status" name="status" class="mt-1 p-2 w-full border rounded">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Add User</button>
+      </form>
+    </div>
+  
+    <!-- Edit User Tab -->
+    <div *ngIf="selectedTab === 'edit'">
+      <h1 class="text-3xl font-bold mb-4">Edit User</h1>
+      <form (ngSubmit)="editUser()" class="bg-white p-4 rounded-lg shadow-md">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium">Name</label>
+          <input id="name" [(ngModel)]="userForm.name" name="name" type="text" class="mt-1 p-2 w-full border rounded" required />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input id="email" [(ngModel)]="userForm.email" name="email" type="email" class="mt-1 p-2 w-full border rounded" required />
+        </div>
+        <div class="mb-4">
+          <label for="status" class="block text-sm font-medium">Status</label>
+          <select id="status" [(ngModel)]="userForm.status" name="status" class="mt-1 p-2 w-full border rounded">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save Changes</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,50 @@
+<header class="bg-blue-900 text-white p-6 fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <h1 class="text-3xl font-bold">Library</h1>
+
+    <!-- Navigation (visible on desktop) -->
+    <nav class="space-x-6 hidden md:flex relative">
+      <a [routerLink]="['/']" class="hover:text-gray-300">Home</a>
+      <a [routerLink]="['/about']" class="hover:text-gray-300">About</a>
+      <a [routerLink]="['/contact']" class="hover:text-gray-300">Contact</a>
+
+      <!-- Login Link with Dropdown (Desktop) -->
+      <div class="relative">
+        <button (click)="toggleDropdown()" class="hover:text-gray-300 flex items-center">
+          Login <i class="fas fa-caret-down ml-2"></i>
+        </button>
+
+        <!-- Desktop Dropdown Menu -->
+        <div *ngIf="dropdownOpen" class="absolute right-0 mt-2 bg-blue-800 text-white w-40 p-2 rounded-md shadow-lg">
+          <a [routerLink]="['/login/studentlogin']" class="block px-4 py-2 hover:bg-blue-700">Student</a>
+          <a [routerLink]="['/login/librarianlogin']" class="block px-4 py-2 hover:bg-blue-700">Librarian</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="md:hidden">
+      <button (click)="toggleMobileMenu()" class="text-white">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div [ngClass]="{ 'hidden': !mobileMenuOpen }" class="md:hidden bg-blue-800 text-white p-4 space-y-4">
+    <a [routerLink]="['/']" class="block">Home</a>
+    <a [routerLink]="['/about']" class="block">About</a>
+    <a [routerLink]="['/contact']" class="block">Contact</a>
+
+    <!-- Mobile Login Dropdown -->
+    <div class="relative">
+      <button (click)="toggleMobileDropdown()" class="block w-full text-left">
+        Login <i class="fas fa-caret-down ml-2"></i>
+      </button>
+      <div *ngIf="mobileDropdownOpen" class="bg-blue-800 text-white py-2 mt-2 rounded-md">
+        <a [routerLink]="['/login/studentlogin']" class="block px-4 py-2">Student</a>
+        <a [routerLink]="['/login/librarianlogin']" class="block px-4 py-2">Librarian</a>
+      </div>
+    </div>
+  </div>
+</header>

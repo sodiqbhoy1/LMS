@@ -1,0 +1,201 @@
+<div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <!-- Tab Navigation -->
+    <div class="flex space-x-4 mb-6">
+      <button 
+        class="tab-button px-4 py-2 text-lg font-semibold text-gray-700 focus:outline-none"
+        [ngClass]="{ 'border-b-2 border-blue-500': selectedTab === 1 }"
+        (click)="selectTab(1)">
+        Add New Book
+      </button>
+      <button 
+        class="tab-button px-4 py-2 text-lg font-semibold text-gray-700 focus:outline-none"
+        [ngClass]="{ 'border-b-2 border-blue-500': selectedTab === 2 }"
+        (click)="selectTab(2)">
+        View Books
+      </button>
+    </div>
+  
+    <!-- Tab Content -->
+    <div *ngIf="selectedTab === 1">
+      <!-- Add Product Form -->
+      <div class="flex justify-center items-center min-h-screen bg-gray-100">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+          <h2 class="text-2xl font-bold mb-6 text-center text-gray-700">Add New Book</h2>
+      
+          <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+            <!-- Book ID -->
+            <div class="mb-4">
+              <label for="id" class="block text-sm font-medium text-gray-700">Book ID</label>
+              <input
+                id="id"
+                type="text"
+                name="id"
+                [(ngModel)]="book.id"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div *ngIf="bookForm.controls['id']?.invalid && bookForm.controls['id']?.touched" class="text-red-500 text-sm">
+                Book ID is required.
+              </div>
+            </div>
+          
+            <!-- Book Title -->
+            <div class="mb-4">
+              <label for="title" class="block text-sm font-medium text-gray-700">Book Title</label>
+              <input
+                id="title"
+                type="text"
+                name="title"
+                [(ngModel)]="book.title"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div *ngIf="bookForm.controls['title']?.invalid && bookForm.controls['title']?.touched" class="text-red-500 text-sm">
+                Title is required.
+              </div>
+            </div>
+          
+            <!-- Author -->
+            <div class="mb-4">
+              <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
+              <input
+                id="author"
+                type="text"
+                name="author"
+                [(ngModel)]="book.author"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div *ngIf="bookForm.controls['author']?.invalid && bookForm.controls['author']?.touched" class="text-red-500 text-sm">
+                Author is required.
+              </div>
+            </div>
+          
+            <!-- ISBN -->
+            <div class="mb-4">
+              <label for="isbn" class="block text-sm font-medium text-gray-700">ISBN</label>
+              <input
+                id="isbn"
+                type="text"
+                name="isbn"
+                [(ngModel)]="book.isbn"
+                required
+                pattern="^\d{13}$"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div *ngIf="bookForm.controls['isbn']?.invalid && bookForm.controls['isbn']?.touched" class="text-red-500 text-sm">
+                ISBN must be a 13-digit number.
+              </div>
+            </div>
+          
+            <!-- Publication Date -->
+            <div class="mb-4">
+              <label for="pubDate" class="block text-sm font-medium text-gray-700">Publication Date</label>
+              <input
+                id="pubDate"
+                type="date"
+                name="pubDate"
+                [(ngModel)]="book.pubDate"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div *ngIf="bookForm.controls['pubDate']?.invalid && bookForm.controls['pubDate']?.touched" class="text-red-500 text-sm">
+                Publication date is required.
+              </div>
+            </div>
+            <!-- Book quantity -->
+            <div class="mb-4">
+              <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
+              <input
+                id="quantity"
+                type="number"
+                name="quantity"
+                [(ngModel)]="book.quantity"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div *ngIf="bookForm.controls['quantity']?.invalid && bookForm.controls['quantity']?.touched" class="text-red-500 text-sm">
+                Quantity is required.
+              </div>
+            </div>
+          
+            <!-- Book Category -->
+            <div class="mb-4">
+              <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+              <select
+                id="category"
+                name="category"
+                [(ngModel)]="book.category"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" disabled selected>Select a category</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Science">Science</option>
+                <option value="Technology">Technology</option>
+                <option value="Biography">Biography</option>
+              </select>
+              <div *ngIf="bookForm.controls['category']?.invalid && bookForm.controls['category']?.touched" class="text-red-500 text-sm">
+                Category is required.
+              </div>
+            </div>
+          
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              [disabled]="bookForm.invalid"
+              [ngClass]="bookForm.invalid ? 'bg-gray-100 text-black' : 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500'"
+              class="w-full py-2 rounded-lg focus:outline-none"
+            >
+              Add Book
+            </button>
+          </form>
+          
+        </div>
+      </div>
+        
+    </div>
+  
+    <div *ngIf="selectedTab === 2">
+      <!-- View Products Section -->
+      <div *ngIf="allbooks.length === 0" class="text-center text-gray-500 mb-6">
+        <p>No products available.</p>
+      </div>
+      
+      <!-- Table to display products -->
+      <table *ngIf="allbooks.length > 0" class="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="py-2 px-4 text-left">BookID</th>
+            <th class="py-2 px-4 text-left">Title</th>
+            <th class="py-2 px-4 text-left">Author</th>
+            <th class="py-2 px-4 text-left">Category</th>
+            <th class="py-2 px-4 text-left">ISBN</th>
+            <th class="py-2 px-4 text-left">Quantity</th>
+            <th class="py-2 px-4 text-left">Pub Date</th>
+            <th class="py-2 px-4 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mybook of allbooks">
+            <td class="py-3 px-4">{{ mybook.book_id }}</td>
+            <td class="py-3 px-4">{{ mybook.title }}</td>
+            <td class="py-3 px-4">{{ mybook.author }}</td>
+            <td class="py-3 px-4">{{ mybook.category }}</td>
+            <td class="py-3 px-4">{{ mybook.isbn }}</td>
+            <td class="py-3 px-4">{{ mybook.quantity }}</td>
+            <td class="py-3 px-4">{{ mybook.published_date }}</td>
+            
+            <td class="py-3 px-4">
+              <!-- Edit and Delete buttons -->
+              <button (click)="editProduct()" class="text-blue-500 hover:underline mr-4">Edit</button>
+              <button (click)="deleteProduct()" class="text-red-500 hover:underline">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+  

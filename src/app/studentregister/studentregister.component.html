@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center items-center min-h-screen bg-gray-100 mt-24">
+  <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-semibold text-center text-blue-900 mb-6">Student Registration</h2>
+
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <!-- Matric Number -->
+      <div class="mb-4">
+        <label for="matricNumber" class="block text-sm font-medium text-gray-700">Matric Number</label>
+        <input id="matricNumber" formControlName="matricNumber" type="text" required
+               class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <div *ngIf="studentForm.controls['matricNumber'].invalid && (studentForm.controls['matricNumber'].touched || studentForm.controls['matricNumber'].dirty)" class="text-red-500 text-sm">
+          Matric number is required.
+        </div>
+      </div>
+
+      <!-- Full Name -->
+      <div class="mb-4">
+        <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input id="fullName" formControlName="fullName" type="text" required
+               class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <div *ngIf="studentForm.controls['fullName'].invalid && (studentForm.controls['fullName'].touched || studentForm.controls['fullName'].dirty)" class="text-red-500 text-sm">
+          Full name is required.
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div class="mb-4">
+        <label for="department" class="block text-sm font-medium text-gray-700">Department</label>
+        <select id="department" formControlName="department" class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="" disabled selected>Select Department</option>
+          <option value="Computer">Computer Science</option>
+          <option value="English">English</option>
+          <option value="Yoruba">Yoruba</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Political">Political Science</option>
+        </select>
+        <div *ngIf="studentForm.controls['department'].invalid && (studentForm.controls['department'].touched || studentForm.controls['department'].dirty)" class="text-red-500 text-sm">
+          Department is required.
+        </div>
+      </div>
+
+      <!-- Level -->
+      <div class="mb-4">
+        <label for="level" class="block text-sm font-medium text-gray-700">Level</label>
+        <select id="level" formControlName="level" class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="" disabled selected>Choose level</option>
+          <option value="ND1">ND 1</option>
+          <option value="ND2">ND 2</option>
+          <option value="HND1">HND 1</option>
+          <option value="HND2">HND 2</option>
+        </select>
+        <div *ngIf="studentForm.controls['level'].invalid && (studentForm.controls['level'].touched || studentForm.controls['level'].dirty)" class="text-red-500 text-sm">
+          Level is required.
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input id="email" formControlName="email" type="email" required
+               class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <div *ngIf="studentForm.controls['email'].invalid && (studentForm.controls['email'].touched || studentForm.controls['email'].dirty)" class="text-red-500 text-sm">
+          Please enter a valid email.
+        </div>
+      </div>
+
+       <!-- Phone -->
+       <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+        <input id="phone" formControlName="phone" type="tel" required
+               class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <div *ngIf="studentForm.controls['phone'].invalid && (studentForm.controls['phone'].touched || studentForm.controls['phone'].dirty)" class="text-red-500 text-sm">
+          Phone number is required.
+        </div>
+      </div>
+
+
+      <!-- Password -->
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input id="password" formControlName="password" type="password" required
+               class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <div *ngIf="studentForm.controls['password'].invalid && (studentForm.controls['password'].touched || studentForm.controls['password'].dirty)" class="text-red-500 text-sm">
+          Password is required.
+        </div>
+      </div>
+
+     
+      <!-- Submit Button -->
+      <div>
+        <button type="submit" [disabled]="studentForm.invalid"
+                class="w-full py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

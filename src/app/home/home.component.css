@@ -1,0 +1,23 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto grid layout with flexible columns */
+    gap: 1.5rem; /* Space between items */
+  }
+
+  /* Make sure the image maintains aspect ratio and is responsive */
+  .product-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  /* Button hover state */
+  .product-item button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .product-item button:hover {
+    background-color: #2563eb; /* Slightly darker blue */
+    transform: scale(1.05);
+  }

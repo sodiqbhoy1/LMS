@@ -1,0 +1,67 @@
+<div class="min-h-screen bg-gray-100 flex">
+
+   
+    <!-- Main Content Area -->
+    <main class="flex-1 p-6">
+      
+      <!-- Header Section -->
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-semibold text-gray-900">Welcome, Librarian</h2>
+        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+          Add New Book
+        </button>
+      </div>
+  
+      <!-- Overview Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Total Books</h3>
+          <p class="text-2xl font-bold text-blue-600"> {{tbooks}} </p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Total Members</h3>
+          <p class="text-2xl font-bold text-green-600">450</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Books Checked Out</h3>
+          <p class="text-2xl font-bold text-red-600">180</p>
+        </div>
+      </div>
+  
+      <!-- Books List -->
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-6">Recently Added Books</h3>
+        
+        <table class="w-full text-left table-auto">
+          <thead>
+            <tr class="text-gray-700 border-b">
+              <th class="py-3 px-4">Title</th>
+              <th class="py-3 px-4">Author</th>
+              <th class="py-3 px-4">Genre</th>
+              <th class="py-3 px-4">Date Added</th>
+              <th class="py-3 px-4">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="py-3 px-4">The Great Gatsby</td>
+              <td class="py-3 px-4">F. Scott Fitzgerald</td>
+              <td class="py-3 px-4">Fiction</td>
+              <td class="py-3 px-4">01/09/2025</td>
+              <td class="py-3 px-4 text-blue-500 cursor-pointer">Edit</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="py-3 px-4">1984</td>
+              <td class="py-3 px-4">George Orwell</td>
+              <td class="py-3 px-4">Dystopian</td>
+              <td class="py-3 px-4">12/29/2024</td>
+              <td class="py-3 px-4 text-blue-500 cursor-pointer">Edit</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  
+  </div>
+  
