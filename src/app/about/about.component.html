@@ -1,27 +1,58 @@
 <app-navbar></app-navbar>
-<section id="about" class="py-16 bg-gray-100 mt-20">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold">About Us</h2>
-    <p class="mt-4 text-lg max-w-3xl mx-auto">We are a community-driven library offering a wide variety of books, e-books, audiobooks, and more!</p>
+
+<!-- About Us Section -->
+<section id="about" class="py-20 bg-gray-50 mt-20">
+  <div class="container mx-auto text-center px-4 sm:px-8">
+    <h2 class="text-4xl font-extrabold text-gray-800">About Us</h2>
+    <p class="mt-4 text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
+      At [Library Name], we are committed to providing a welcoming environment where individuals of all ages can explore, learn, and grow. Our library boasts a rich collection of books, e-books, audiobooks, and other resources, designed to ignite curiosity and inspire creativity in every visitor.
+    </p>
+    <p class="mt-4 text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
+      Our mission is to foster a love for reading and lifelong learning by offering a wide range of resources and services to meet the diverse needs of our community. We aim to be more than just a place for books—we are a community hub where ideas are shared, connections are made, and the pursuit of knowledge is celebrated.
+    </p>
   </div>
 </section>
 
-<section id="services" class="py-16">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold">Our Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold">Book Borrowing</h3>
-        <p class="mt-4 text-gray-700">Borrow books from a wide variety of genres and topics.</p>
+<!-- Our Services Section -->
+<section id="services" class="py-20 bg-white">
+  <div class="container mx-auto text-center px-4 sm:px-8">
+    <h2 class="text-4xl font-extrabold text-gray-800">Our Services</h2>
+    <p class="mt-4 text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">We offer a range of services to support our mission of providing access to knowledge, fostering creativity, and building community. Our services cater to all ages and interests, ensuring there is something for everyone.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+      <!-- Service 1 -->
+      <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+        <div class="bg-blue-500 text-white p-4 rounded-full inline-block mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800">Book Borrowing</h3>
+        <p class="mt-4 text-gray-700">Our library offers a vast collection of physical books across various genres, from fiction to non-fiction, academic to leisure reading. Borrow books for your personal reading or research needs.</p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold">Digital Library</h3>
-        <p class="mt-4 text-gray-700">Access thousands of e-books and audiobooks online.</p>
+
+      <!-- Service 2 -->
+      <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+        <div class="bg-green-500 text-white p-4 rounded-full inline-block mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3h14c1.104 0 1.99.895 1.99 2L19 19c0 1.105-.895 2-1.99 2H5c-1.104 0-1.99-.895-1.99-2L5 5c0-1.105.895-2 1.99-2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800">Digital Library</h3>
+        <p class="mt-4 text-gray-700">Access thousands of e-books and audiobooks through our digital library platform. Conveniently available anytime, anywhere, allowing you to read and listen to content on the go.</p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold">Community Events</h3>
-        <p class="mt-4 text-gray-700">Join us for reading clubs, author talks, and educational workshops.</p>
+
+      <!-- Service 3 -->
+      <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+        <div class="bg-purple-500 text-white p-4 rounded-full inline-block mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l2-2 2 2m0 0l2-2 2 2m0 0l2-2 2 2m-6 2l2-2m0 0l-2-2m0 0L7 7m0 0l2 2m0 0l-2 2"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800">Community Events</h3>
+        <p class="mt-4 text-gray-700">We host various community events including author talks, book signings, reading clubs, and educational workshops. These events are designed to encourage a sense of belonging and promote intellectual growth within the community.</p>
       </div>
     </div>
   </div>
 </section>
+<app-footer></app-footer>
