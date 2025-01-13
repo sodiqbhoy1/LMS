@@ -1,64 +1,43 @@
-<div class="bg-gradient-to-r from-blue-200 to-indigo-300 p-8 rounded-lg shadow-xl max-w-4xl mx-auto">
-  <h2 class="text-3xl font-semibold text-center text-white mb-8">My Profile</h2>
-
-  <!-- Profile Card -->
-  <div class="bg-white p-6 rounded-lg shadow-lg space-y-6">
-    
-    <!-- Welcome and Name -->
+<div class="bg-gray-900 p-12 rounded-3xl shadow-2xl max-w-6xl mx-auto">
+  <h2 class="text-5xl font-bold text-center text-white mb-8">Student Dashboard</h2>
+  <div class="bg-gray-800 p-8 rounded-2xl shadow-lg">
+    <!-- Header -->
     <div class="text-center">
-      <h1 class="text-3xl font-bold text-blue-800">Welcome, {{ student.fullName }}!</h1>
-      <p class="text-lg text-gray-500">Your Dashboard</p>
+      <h1 class="text-3xl font-semibold text-white">Welcome, {{ student.fullName }}!</h1>
+      <p class="text-lg text-gray-400 mt-2">Your Dashboard Overview</p>
     </div>
-    
+
     <!-- Profile Info Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Matric Number -->
-      <div class="bg-blue-50 p-6 rounded-lg shadow-sm transition transform hover:scale-105">
-        <p class="text-sm text-gray-600">Matric Number</p>
-        <p class="font-semibold text-blue-700">{{ student.matricNo }}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div class="bg-indigo-700 p-6 rounded-xl shadow-lg">
+        <p class="text-sm text-gray-200">Matric Number</p>
+        <p class="font-semibold text-white">{{ student.matricNo }}</p>
       </div>
-      
-      <!-- Library ID -->
-      <div class="bg-blue-50 p-6 rounded-lg shadow-sm transition transform hover:scale-105">
-        <p class="text-sm text-gray-600">Library ID</p>
-        <p class="font-semibold text-blue-700">{{ student.libraryID }}</p>
+      <div class="bg-indigo-700 p-6 rounded-xl shadow-lg">
+        <p class="text-sm text-gray-200">Library ID</p>
+        <p class="font-semibold text-white">{{ student.libraryID }}</p>
       </div>
-      
-      <!-- Email -->
-      <div class="bg-blue-50 p-6 rounded-lg shadow-sm transition transform hover:scale-105">
-        <p class="text-sm text-gray-600">Email</p>
-        <p class="font-semibold text-blue-700">{{ student.email }}</p>
+      <div class="bg-indigo-700 p-6 rounded-xl shadow-lg">
+        <p class="text-sm text-gray-200">Email</p>
+        <p class="font-semibold text-white">{{ student.email }}</p>
       </div>
-
-      <!-- Department -->
-      <div class="bg-blue-50 p-6 rounded-lg shadow-sm transition transform hover:scale-105">
-        <p class="text-sm text-gray-600">Department</p>
-        <p class="font-semibold text-blue-700">{{ student.department }}</p>
+      <div class="bg-indigo-700 p-6 rounded-xl shadow-lg">
+        <p class="text-sm text-gray-200">Department</p>
+        <p class="font-semibold text-white">{{ student.department }}</p>
       </div>
-
-      <!-- Level -->
-      <div class="bg-blue-50 p-6 rounded-lg shadow-sm transition transform hover:scale-105">
-        <p class="text-sm text-gray-600">Level</p>
-        <p class="font-semibold text-blue-700">{{ student.level }}</p>
+      <div class="bg-indigo-700 p-6 rounded-xl shadow-lg">
+        <p class="text-sm text-gray-200">Level</p>
+        <p class="font-semibold text-white">{{ student.level }}</p>
       </div>
-
-      <!-- Phone -->
-      <div class="bg-blue-50 p-6 rounded-lg shadow-sm transition transform hover:scale-105">
-        <p class="text-sm text-gray-600">Phone</p>
-        <p class="font-semibold text-blue-700">{{ student.phone }}</p>
+      <div class="bg-indigo-700 p-6 rounded-xl shadow-lg">
+        <p class="text-sm text-gray-200">Phone</p>
+        <p class="font-semibold text-white">{{ student.phone }}</p>
       </div>
     </div>
 
     <!-- Edit Profile Button -->
-    <div class="text-center mt-10">
-      <button class="py-3 px-8 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 hover:scale-105 transition duration-300">
-        Edit Profile
-      </button>
+    <div class="text-center mt-8">
+      <button class="py-3 px-8 bg-indigo-500 text-white text-lg font-semibold rounded-full hover:bg-indigo-600 transition duration-200">Edit Profile</button>
     </div>
-  </div>
-  
-  <!-- Loader/Placeholder while student data is loading -->
-  <div *ngIf="!student" class="text-center text-gray-500 mt-8">
-    <p>Loading your profile...</p>
   </div>
 </div>

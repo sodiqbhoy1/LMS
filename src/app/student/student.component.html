@@ -1,35 +1,41 @@
-<div class="flex min-h-screen bg-gray-100">
-    <!-- Sidebar -->
-    <div class="w-64 bg-blue-900 text-white p-6">
-      <h2 class="text-3xl font-semibold mb-6">Library</h2>
-      <ul class="space-y-4">
-        
-        <li>
-          <a routerLink="/student/profile" routerLinkActive="text-blue-400" class="text-lg hover:text-blue-400 flex items-center">
-            <i class="fas fa-user mr-2"></i>
-            Profile
-          </a>
-        </li>
-        
-        <li>
-          <a routerLink="/student/sbooks" routerLinkActive="text-blue-400" class="text-lg hover:text-blue-400 flex items-center">
-            <i class="fas fa-book mr-2"></i>
-            Books
-          </a>
-        </li>
-        
-        <li>
-          <a routerLink="/student/notification" routerLinkActive="text-blue-400" class="text-lg hover:text-blue-400 flex items-center">
-            <i class="fas fa-bell mr-2"></i>
-            Notifications
-          </a>
-        </li>
-      </ul>
-    </div>
-  
-    <!-- Main Content -->
-    <div class="flex-1 p-8 bg-gray-50">
-      <router-outlet></router-outlet>
-    </div>
+<div class="flex min-h-screen bg-gray-900">
+  <!-- Sidebar -->
+  <div class="w-64 bg-indigo-800 text-white p-6">
+    <h2 class="text-3xl font-semibold mb-6">Library</h2>
+    <ul class="space-y-4">
+      <!-- Profile Link -->
+      <li>
+        <a routerLink="/student/profile" routerLinkActive="text-blue-400" class="text-lg hover:text-blue-400 flex items-center transition-all">
+          <i class="fas fa-user mr-3"></i>
+          Profile
+        </a>
+      </li>
+      <!-- Books Link -->
+      <li>
+        <a routerLink="/student/sbooks" routerLinkActive="text-blue-400" class="text-lg hover:text-blue-400 flex items-center transition-all">
+          <i class="fas fa-book mr-3"></i>
+          Books
+        </a>
+      </li>
+      <!-- Notifications Link -->
+      <li>
+        <a routerLink="/student/notification" routerLinkActive="text-blue-400" class="text-lg hover:text-blue-400 flex items-center transition-all">
+          <i class="fas fa-bell mr-3"></i>
+          Notifications
+        </a>
+      </li>
+      <!-- Logout Link -->
+      <li>
+        <a href="#" class="text-lg hover:text-red-400 flex items-center mt-8 transition-all">
+          <i class="fas fa-sign-out-alt mr-3"></i>
+          Logout
+        </a>
+      </li>
+    </ul>
   </div>
-  
+
+  <!-- Main Content -->
+  <div class="flex-1 p-8 bg-gray-800">
+    <router-outlet></router-outlet>
+  </div>
+</div>

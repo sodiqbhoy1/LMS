@@ -1,16 +1,19 @@
 <app-navbar></app-navbar>
 
-<section id="home" class="bg-cover bg-center h-screen relative top-[5.3rem]" style="background-image: url('assets/library-hero.jpg')">
+<section id="home" class="bg-cover bg-center h-screen relative top-[5.3rem]" style="background-image: url('/assets/library.jpg')">
   <!-- Overlay for darkened background -->
   <div class="absolute inset-0 bg-black opacity-60"></div>
   
   <!-- Content -->
-  <div class="container mx-auto text-center text-white relative z-10 px-4 sm:px-8">
-    <h2 class="text-5xl font-extrabold leading-tight sm:text-6xl md:text-7xl">Welcome to Our Library</h2>
-    <p class="mt-4 text-xl sm:text-2xl max-w-3xl mx-auto">A place where knowledge, imagination, and community come together. Explore our vast collection of books, e-books, and resources to fuel your curiosity.</p>
-    <a href="#explore" class="mt-6 inline-block bg-blue-600 text-white py-3 px-8 rounded-lg text-xl hover:bg-blue-500 transition duration-300">Start Exploring</a>
+  <div class="container mx-auto text-center text-white relative z-10 px-4 sm:px-8 flex items-center justify-center h-full">
+    <div>
+      <h2 class="text-5xl font-extrabold leading-tight sm:text-6xl md:text-7xl">Welcome to Our Library</h2>
+      <p class="mt-4 text-xl sm:text-2xl max-w-3xl mx-auto">A place where knowledge, imagination, and community come together. Explore our vast collection of books, e-books, and resources to fuel your curiosity.</p>
+      <a href="#explore" class="mt-6 inline-block bg-blue-600 text-white py-3 px-8 rounded-lg text-xl hover:bg-blue-500 transition duration-300">Start Exploring</a>
+    </div>
   </div>
 </section>
+
 
 <!-- Featured Books Section -->
 <section id="explore" class="py-20 bg-gray-100">
@@ -20,7 +23,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
       <!-- Book 1 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
-        <img src="assets/book1.jpg" alt="Book 1" class="w-full h-64 object-cover">
+        <img src="adventure.jpg" alt="Book 1" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="text-xl font-semibold text-gray-800">The Great Adventure</h4>
           <p class="mt-2 text-gray-600">A thrilling story of courage and resilience. Join the characters on their journey of discovery and growth.</p>
@@ -28,7 +31,7 @@
       </div>
       <!-- Book 2 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
-        <img src="assets/book2.jpg" alt="Book 2" class="w-full h-64 object-cover">
+        <img src="ages.jpg" alt="Book 2" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="text-xl font-semibold text-gray-800">The Wisdom of Ages</h4>
           <p class="mt-2 text-gray-600">Dive into the depths of history and philosophy. This book will inspire you to think about life in new ways.</p>
@@ -36,7 +39,7 @@
       </div>
       <!-- Book 3 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
-        <img src="assets/book3.jpg" alt="Book 3" class="w-full h-64 object-cover">
+        <img src="tech.jpg" alt="Book 3" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="text-xl font-semibold text-gray-800">Tech Revolution</h4>
           <p class="mt-2 text-gray-600">Explore how technology is shaping our world. A perfect read for anyone interested in innovation and the future.</p>
@@ -54,19 +57,19 @@
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
       <!-- Item 1 -->
       <div class="bg-white text-center p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-        <img src="assets/icon-books.png" alt="Books" class="mx-auto h-20">
+        <img src="collections.jpg" alt="Books" class="mx-auto h-20">
         <h4 class="mt-4 text-xl font-semibold text-gray-800">Vast Collection</h4>
         <p class="mt-2 text-gray-600">From classic novels to modern-day masterpieces, our library hosts a collection of over 100,000 books.</p>
       </div>
       <!-- Item 2 -->
       <div class="bg-white text-center p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-        <img src="assets/icon-events.png" alt="Events" class="mx-auto h-20">
+        <img src="events.jpg" alt="Events" class="mx-auto h-20">
         <h4 class="mt-4 text-xl font-semibold text-gray-800">Engaging Events</h4>
         <p class="mt-2 text-gray-600">Join our community events, including author talks, reading clubs, and educational workshops.</p>
       </div>
       <!-- Item 3 -->
       <div class="bg-white text-center p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-        <img src="assets/icon-digital.png" alt="Digital Library" class="mx-auto h-20">
+        <img src="digital.jpg" alt="Digital Library" class="mx-auto h-20">
         <h4 class="mt-4 text-xl font-semibold text-gray-800">Digital Library</h4>
         <p class="mt-2 text-gray-600">Access e-books, audiobooks, and academic journals online from the comfort of your home.</p>
       </div>
