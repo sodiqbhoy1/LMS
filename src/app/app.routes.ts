@@ -16,11 +16,13 @@ import { StudentComponent } from './student/student.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SbooksComponent } from './sbooks/sbooks.component';
 import { NotificationComponent } from './notification/notification.component';
+import { AnnouncementComponent } from './announcement/announcement.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'contact', component: ContactComponent},
     {path: 'about', component: AboutComponent},
+    {path: 'announcement', component: AnnouncementComponent},
     
     // login
     {path: 'login/studentlogin', component: StudentloginComponent },
