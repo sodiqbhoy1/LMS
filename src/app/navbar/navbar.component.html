@@ -1,4 +1,4 @@
-<header class="bg-blue-900  text-white p-6 fixed top-0 left-0 w-full z-50">
+<header class="bg-[#3FC35F] text-white p-6 fixed top-0 left-0 w-full z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center">
     <h1 class="text-3xl font-bold">Library</h1>
 
@@ -16,9 +16,9 @@
         </button>
 
         <!-- Desktop Dropdown Menu -->
-        <div *ngIf="dropdownOpen" class="absolute right-0 mt-2 bg-blue-800 text-white w-40 p-2 rounded-md shadow-lg">
-          <a [routerLink]="['/login/studentlogin']" class="block px-4 py-2 hover:bg-blue-700">Student</a>
-          <a [routerLink]="['/login/librarianlogin']" class="block px-4 py-2 hover:bg-blue-700">Librarian</a>
+        <div *ngIf="dropdownOpen" class="absolute right-0 mt-2 bg-[#3FC35F] text-white w-40 p-2 rounded-md shadow-lg">
+          <a [routerLink]="['/login/studentlogin']" class="block px-4 py-2 hover:bg-[#36A94A]">Student</a>
+          <a [routerLink]="['/login/librarianlogin']" class="block px-4 py-2 hover:bg-[#36A94A]">Librarian</a>
         </div>
       </div>
     </nav>
@@ -32,7 +32,7 @@
   </div>
 
   <!-- Mobile Menu (Hidden by default) -->
-  <div [ngClass]="{ 'hidden': !mobileMenuOpen }" class="md:hidden bg-blue-800 text-white p-4 space-y-4">
+  <div [ngClass]="{ 'hidden': !mobileMenuOpen }" class="md:hidden bg-[#3FC35F] text-white p-4 space-y-4">
     <a [routerLink]="['/']" class="block">Home</a>
     <a [routerLink]="['/about']" class="block">About</a>
     <a [routerLink]="['/contact']" class="block">Contact</a>
@@ -43,7 +43,7 @@
       <button (click)="toggleMobileDropdown()" class="block w-full text-left">
         Login <i class="fas fa-caret-down ml-2"></i>
       </button>
-      <div *ngIf="mobileDropdownOpen" class="bg-blue-800 text-white py-2 mt-2 rounded-md">
+      <div *ngIf="mobileDropdownOpen" class="bg-[#3FC35F] text-white py-2 mt-2 rounded-md">
         <a [routerLink]="['/login/studentlogin']" class="block px-4 py-2">Student</a>
         <a [routerLink]="['/login/librarianlogin']" class="block px-4 py-2">Librarian</a>
       </div>
